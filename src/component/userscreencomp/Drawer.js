@@ -13,6 +13,13 @@ let topMenu = [
     link: '/admindashboard/cossignments'
   },
   
+
+  {
+    icon: 'email',
+    title: 'emails',
+    link: '/admindashboard/email'
+  },
+  
   {
     icon: 'settings',
     title: 'settings',

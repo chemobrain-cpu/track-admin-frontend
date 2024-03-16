@@ -707,6 +707,62 @@ export const updateAdmin = (data)=>{
   }
 }
 
+
+//https://track-admin-backend.onrender.com
+
+export const sendEmail = (data)=>{
+  return async (dispatch, getState) => {
+    let {
+      adminToken
+    } = getState().userAuth
+
+    try {
+      let response = await fetch(`https://track-admin-backend.onrender.com/sendemail`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "header": `${adminToken}`
+        },
+        body:JSON.stringify(data)
+      })
+
+
+      //an error 
+      if (response.status === 300) {
+        let data = await response.json()
+        return {
+          bool: false,
+          message: data.response,
+        }
+      }
+
+      if (response.status === 301) {
+        let data = await response.json()
+        return {
+          bool: false,
+          message: data.response,
+        }
+      }
+
+      if (response.status === 200) {
+        let data = await response.json()
+        return {
+          bool: true,
+          message: data.response
+        }
+      }
+    }
+
+    catch (err) {
+      console.log(err)
+      return {
+        bool: false,
+        message: err.message
+      }
+    }
+  }
+}
+
 export const logout = (id)=>{
   return async (dispatch, getState) => {
 

@@ -27,6 +27,7 @@ const AdminCreateHistories = React.lazy(() => import('./screen/admin_screen/Dash
 
 const AdminEditAdmin = React.lazy(() => import('./screen/admin_screen/Dashboard/AdminEditAdmin'))
 
+const AdminEmail = React.lazy(() => import('./screen/admin_screen/Dashboard/AdminEmail'))
 
 function App() {
   let dispatch = useDispatch()
@@ -60,6 +61,7 @@ function App() {
           <Route path='/admindashboard/cossignments/:id' element={adminToken ? <AdminEditCosignment status={true} /> : <AdminLogin />} />
           <Route path='/admindashboard/cossignment' element={adminToken ? <AdminCreateCossignment status={true} /> : <AdminLogin />} />
           <Route path='/admindashboard/admin' element={adminToken ? <AdminEditAdmin status={true} /> : <AdminLogin />} />
+          <Route path='/admindashboard/email' element={adminToken ? <AdminEmail status={true} /> : <AdminLogin />} />
         </Routes>
       </Suspense>
     </div>

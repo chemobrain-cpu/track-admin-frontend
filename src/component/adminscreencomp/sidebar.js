@@ -25,12 +25,17 @@ const Sidebar = ({ status }) => {
             title: 'cossignments',
             link: '/admindashboard/cossignments'
         },
-          {
+        {
+            icon: 'email',
+            title: 'email',
+            link: '/admindashboard/email'
+        },
+        {
             icon: 'settings',
             title: 'setting',
             link: '/admindashboard/admin'
         },
-          
+
 
     ]
 

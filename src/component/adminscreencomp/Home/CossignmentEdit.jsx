@@ -71,7 +71,7 @@ export const AdminCossignmentEditComponent = ({ updateHandler, }) => {
 
                 {isData && <div className={styles.barCodeArea} ref={componentRef}>
                     <h3 className={styles.sectionHead}>Skylane Express</h3>
-                    <Barcode value="SKYL-5089332" options={{ format: 'code128' }} renderer="svg" />
+                    <Barcode value={isData.courier_Reference_No} options={{ format: 'code128' }} renderer="svg" />
 
                     <div className={styles.invoiceContainer}>
                         <div className={styles.invoiceCard}>
